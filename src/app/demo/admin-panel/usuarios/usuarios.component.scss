@@ -1,0 +1,156 @@
+@import '../../../../scss/settings/color-variables.scss';
+
+::ng-deep .mat-horizontal-stepper-header .mat-step-icon{
+  background-color: #00541C;
+  color: white;
+}
+
+.auth-main {
+  position: relative;
+
+  .auth-wrapper {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+
+    .saprator {
+      position: relative;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--bs-border-color);
+        z-index: 1;
+      }
+
+      span {
+        font-size: 0.875rem;
+        padding: 8px 24px;
+        background: $white;
+        z-index: 5;
+        text-transform: capitalize;
+        color: $gray-800;
+        font-weight: 500;
+      }
+    }
+
+    &.v3 {
+      display: flex;
+      align-items: center;
+
+    }
+    .auth-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+
+      .card {
+        width: 100%;
+        max-width: 495px;
+        box-shadow: none;
+      }
+
+      img + span {
+        padding-left: 15px;
+      }
+
+      h5 {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+    .auth-footer,
+    .auth-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.button-delete-register{
+  background-color: red;
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
+.button-delete-register svg {
+  width: 18px;
+  height: 16px;
+  margin-top: -16px;
+  margin-left: -9px;
+}
+
+.text-titulo-login{
+  color: #00541C;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+.text-olvido-clave{
+  color: #00541C;
+}
+.btn-ingresar-login{
+  background-color: #00541C;color: white;
+}
+
+@media (max-width: 575.98px) {
+  .authentication-wrapper .auth-input-wrapper .auth-input {
+    font-size: 1.125rem;
+  }
+}
+.light-style .authentication-wrapper .authentication-bg {
+  background-color: #fff;
+}
+.header-nav-control-user-public{
+  width: 100% !important;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 60px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  position: fixed;
+  left: 0px;
+  right: 0;
+  z-index: 1025;
+  display: flex;
+}
+
+.header-nav-control-user-public .header-wrapper{
+  justify-content: flex-end;
+}
+
+.container-control-user-public{
+  margin-left: 0px;
+}
+
+.header-wrapper2{
+  min-height: 60px !important;
+  display: flex;
+  padding: 0 25px 0px 12px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.header-wrapper2 img{
+  width: 100px;
+  height: 60px;
+}
+
+.footer-control-user-public{
+  margin-left: 0px;
+  background-color: white;
+}
+
+.authetication-control-user-public{
+  margin-top: -60px;
+}

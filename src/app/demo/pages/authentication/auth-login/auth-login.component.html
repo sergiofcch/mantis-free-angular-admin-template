@@ -1,0 +1,46 @@
+<div class="container-xxl div-login-form">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <img src="../../../../../assets/images/logo-dark.svg" alt="" srcset="">
+          </div>
+          <!-- /Logo -->
+          <h4 class="mb-2 text-titulo-login">Bienvenido al Control Vehicular! 👋</h4>
+          <p class="mb-4">Inicia sesión en tu cuenta y comienza la aventura.</p>
+
+          <form id="formAuthentication" class="mb-3" [formGroup]="loginForm">
+            <div class="form-group mb-3">
+              <label class="form-label" for="documento">Usuario:</label>
+              <input type="number" class="form-control" id="documento" placeholder="Ingresa tu documento" formControlName="documento"/>
+            </div>
+            <div class="mb-3 form-password-toggle">
+              <div class="d-flex justify-content-between">
+                <label class="form-label" for="password">Contraseña</label>
+                <a href="auth-forgot-password-basic.html" class="text-olvido-clave">
+                  <small>¿Has olvidado tu contraseña?</small>
+                </a>
+              </div>
+              <div class="form-group mb-3 input-group input-group-merge">
+                <input type="password" class="form-control" id="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" formControlName="password"/>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100 btn-ingresar-login" type="button" (click)="authentication()">Ingresar</button>
+            </div>
+          </form>
+
+          <p class="text-center">
+            <span>¿Eres nuevo en nuestra plataforma? </span>
+            <a href="/register" class="text-olvido-clave">
+              <span>Crear una cuenta</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
