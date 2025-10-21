@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-body">
+    <!-- /Logo -->
+    <h4 class="mb-2 text-titulo-login">REPORTES ✅</h4>
+
+    <div class="row">
+      <form id="formReporte" class="mb-3 row" [formGroup]="formReporte">
+        <div class="form-group mb-3 col-md-2">
+          <label class="form-label" for="tipo-reporte">Tipo de Filtro:</label>
+          <select class="form-select" id="tipo-reporte" formControlName="type">
+            <option value="listarHistoricos">Historico</option>
+            <option value="listarDiario">Diario</option>
+          </select>
+        </div>
+        <div class="mb-3 col-md-10" style="margin-top: 30px;">
+          <button
+            class="btn btn-primary d-grid w-100 btn-ingresar-login"
+            type="button"
+            (click)="generarReporte()"
+            style="width: 100px !important"
+          >
+            Generar
+          </button>
+        </div>
+      </form>
+
+      <div class="form-group mb-3 col-md-12" *ngIf="historicos.length > 0">
+        <div class="card tbl-card">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th>PLACA</th>
+                  <th>MARCA</th>
+                  <th>MODELO</th>
+                  <th>USUARIO</th>
+                  <th>FECHA</th>
+                  <th>OBSERVACIÓN</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (historico of historicos; track historico.id) {
+                  <tr>
+                    <td>
+                      <a href="javascript:" class="text-muted">{{ historico.vehiclePlate }}</a>
+                    </td>
+                    <td>{{ historico.vehicleBrand }}</td>
+                    <td>{{ historico.vehicleModel }}</td>
+                    <td>{{ historico.userName }}</td>
+                    <td>{{ historico.dateTimeEntry }}</td>
+                    <td>{{ historico.observations }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

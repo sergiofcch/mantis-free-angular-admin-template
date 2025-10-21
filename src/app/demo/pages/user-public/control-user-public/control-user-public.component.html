@@ -1,31 +1,58 @@
 <header class="pc-header header-nav-control-user-public">
-    <div class="header-wrapper2" style="display: flex; justify-content: flex-start;">
-        <img src="../../../../../assets/images/logo-dark.svg" alt="" srcset="" style="width: 100px;"/>
-    </div>
+  <div class="header-wrapper2" style="display: flex; justify-content: flex-start">
+    <img src="../../../../../assets/images/logo-dark.svg" alt="" srcset="" style="width: 100px" />
+  </div>
   <div class="header-wrapper">
     <div>
-        <ul class="list-unstyled">
-            <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
-                <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
-                <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2" />
-                <span class="f-w-600">Sergio Cardozo</span>
+      <ul class="list-unstyled">
+        <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
+          <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
+            <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2" />
+            <span class="f-w-600">Sergio Cardozo</span>
+          </a>
+          <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+            <div class="dropdown-header">
+              <div class="d-flex mb-1">
+                <div class="flex-shrink-0">
+                  <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar wid-35" />
+                </div>
+                <div class="flex-grow-1 ms-3 text-start">
+                  <h6 class="mb-0">Sergio Fernando Cardozo</h6>
+                  <span>Usuario</span>
+                </div>
+                <a href="javascript:" class="bg-transparent" (click)="logout()">
+                  <i class="d-flex f-20" antIcon theme="outline" type="logout"></i>
                 </a>
-                <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
-                <div class="dropdown-header">
-                    <div class="d-flex mb-1">
-                    <div class="flex-shrink-0">
-                        <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar wid-35" />
-                    </div>
-                    <div class="flex-grow-1 ms-3 text-start">
-                        <h6 class="mb-0">Sergio Cardozo Chavarro</h6>
-                        <span>Usuario</span>
-                    </div>
-                    <a href="javascript:" class="bg-transparent"><i class="d-flex f-20" antIcon theme="outline" type="logout"></i></a>
-                    </div>
-                </div>
-                </div>
-            </li>
-        </ul>
+              </div>
+            </div>
+            <ul ngbNav #nav="ngbNav" class="nav drp-tabs nav-fill nav-tabs">
+              <li ngbNavItem="1">
+                <a ngbNavLink>
+                  <i antIcon theme="outline" type="user" class="me-2"></i>
+                  Profile
+                </a>
+                <ng-template ngbNavContent>
+                  <!-- @for (task of profile; track task) {
+              <div>
+                <a class="dropdown-item">
+                  <i class="text-muted" antIcon theme="outline" type="{{ task.icon }}"></i>
+                  <span>{{ task.title }}</span>
+                </a>
+              </div>
+            } -->
+                  <div>
+                    <a class="dropdown-item" (click)="logout()">
+                      <i class="text-muted" antIcon theme="outline" type="logout"></i>
+                      <span>Cerrar Sesión</span>
+                    </a>
+                  </div>
+                </ng-template>
+              </li>
+            </ul>
+            <div [ngbNavOutlet]="nav"></div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
@@ -44,12 +71,11 @@
                     <div class="card-body">
                       <!-- /Logo -->
                       <h4 class="mb-2 text-titulo-login">PROPIEDAD DE VEHICULOS 🚗</h4>
-                      <p class="mb-4">¡Haz que la gestión de tus vehiculos sea fácil y divertida!</p>
 
                       <form id="formAuthenticationTwo" class="mb-3 row" [formGroup]="formVehiculo">
                         <div class="form-group mb-3 col-md-6">
                           <label class="form-label" for="tipo-documento">Tipo de Vehiculo:</label>
-                          <select class="form-select" id="tipo-documento" formControlName="tipoVehiculo">
+                          <select class="form-select" id="tipo-documento" formControlName="type">
                             <option value="MOTO">Moto</option>
                             <option value="CARRO">Carro</option>
                           </select>
@@ -61,7 +87,57 @@
                             class="form-control"
                             id="placa"
                             placeholder="Ingresa la placa de tu vehiculo"
-                            formControlName="placa"
+                            formControlName="plate"
+                          />
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                          <label class="form-label" for="marca">Marca:</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="marca"
+                            placeholder="Ingresa la marca de tu vehiculo"
+                            formControlName="trademark"
+                          />
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                          <label class="form-label" for="modelo">Modelo:</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="modelo"
+                            placeholder="Ingresa el modelo de tu vehiculo"
+                            formControlName="model"
+                          />
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                          <label class="form-label" for="soatExpiDate">Fecha Soat - Vence:</label>
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="soatExpiDate"
+                            placeholder="Ingresa la fecha de vencimiento del soat de tu vehiculo"
+                            formControlName="soatExpiDate"
+                          />
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                          <label class="form-label" for="techMechaExpiDate">Fecha Tecnomecanica - Vence:</label>
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="techMechaExpiDate"
+                            placeholder="Ingresa la fecha de vencimiento de la tecnomecanica de tu vehiculo"
+                            formControlName="techMechaExpiDate"
+                          />
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                          <label class="form-label" for="color">Color:</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="color"
+                            placeholder="Ingresa el color de tu vehiculo"
+                            formControlName="color"
                           />
                         </div>
                         <div class="mb-3 col-md-6">
@@ -82,6 +158,8 @@
                                   <tr>
                                     <th>TIPO DE VEHICULO</th>
                                     <th>PLACA</th>
+                                    <th>MARCA</th>
+                                    <th>MODELO</th>
                                     <th>OPCIONES</th>
                                   </tr>
                                 </thead>
@@ -89,9 +167,11 @@
                                   @for (vehiculo of vehiculosUser; track vehiculo) {
                                     <tr>
                                       <td>
-                                        <a href="javascript:" class="text-muted">{{ vehiculo.tipoVehiculo }}</a>
+                                        <a href="javascript:" class="text-muted">{{ vehiculo.type }}</a>
                                       </td>
-                                      <td>{{ vehiculo.placa }}</td>
+                                      <td>{{ vehiculo.plate }}</td>
+                                      <td>{{ vehiculo.trademark }}</td>
+                                      <td>{{ vehiculo.model }}</td>
                                       <td>
                                         <button class="btn btn-icon button-delete-register" (click)="deleteVehiculo(vehiculo)">
                                           <i anticon="" type="delete" theme="outline" class="f-20">
@@ -139,7 +219,7 @@
       <div class="col my-1">
         <p class="m-0">
           Copyright &copy;
-          <a href="https://codedthemes.com" target="_blank">Sergio Cardozo</a>
+          <a href="https://codedthemes.com" target="_blank"></a>
         </p>
       </div>
     </div>

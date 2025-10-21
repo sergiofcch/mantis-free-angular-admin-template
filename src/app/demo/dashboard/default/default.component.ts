@@ -41,7 +41,7 @@ export class DefaultComponent {
 
   AnalyticEcommerce = [
     {
-      title: 'Total Page Views',
+      title: 'Total de Vehiculos',
       amount: '4,42,236',
       background: 'bg-light-primary ',
       border: 'border-primary',
@@ -51,7 +51,7 @@ export class DefaultComponent {
       number: '35,000'
     },
     {
-      title: 'Total Users',
+      title: 'Total de Usuarios',
       amount: '78,250',
       background: 'bg-light-primary ',
       border: 'border-primary',
@@ -61,7 +61,7 @@ export class DefaultComponent {
       number: '8,900'
     },
     {
-      title: 'Total Order',
+      title: 'Total de Vehiculos Estacionados',
       amount: '18,800',
       background: 'bg-light-warning ',
       border: 'border-warning',
@@ -70,16 +70,16 @@ export class DefaultComponent {
       color: 'text-warning',
       number: '1,943'
     },
-    {
-      title: 'Total Sales',
-      amount: '$35,078',
-      background: 'bg-light-warning ',
-      border: 'border-warning',
-      icon: 'fall',
-      percentage: '27.4%',
-      color: 'text-warning',
-      number: '$20,395'
-    }
+    // {
+    //   title: 'Total Sales',
+    //   amount: '$35,078',
+    //   background: 'bg-light-warning ',
+    //   border: 'border-warning',
+    //   icon: 'fall',
+    //   percentage: '27.4%',
+    //   color: 'text-warning',
+    //   number: '$20,395'
+    // }
   ];
 
   transaction = [

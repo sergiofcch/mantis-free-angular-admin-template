@@ -2,7 +2,6 @@
   <div class="card-body">
     <!-- /Logo -->
     <h4 class="mb-2 text-titulo-login">USUARIOS REGISTRADOS 👤</h4>
-    <p class="mb-4">¡Haz que la gestión de tus usuarios sea fácil y divertida!</p>
 
     <div class="row">
         <div class="form-group mb-3 col-md-12">
@@ -14,22 +13,20 @@
 
                     <th>NOMBRE COMPLETO</th>
                     <th>DOCUMENTO</th>
-                    <th>CELULAR</th>
+                    <!-- <th>CELULAR</th> -->
                     <th>CORREO</th>
                     <th>CARGO</th>
-                    <th>ESTADO</th>
                     <th>OPCIONES</th>
                   </tr>
                 </thead>
                 <tbody>
                   @for (usuario of usuarios; track usuario.id) {
                     <tr>
-                      <td> <a href="javascript:" class="text-muted">{{ usuario.nombres }} {{ usuario.apellidos }}</a> </td>
-                      <td> {{ usuario.tipoDocumento }} - {{ usuario.documento }}</td>
-                      <td> {{ usuario.celular }}</td>
-                      <td> {{ usuario.correo }}</td>
-                      <td> {{ usuario.cargo }}</td>
-                      <td> {{ usuario.estado }}</td>
+                      <td> <a href="javascript:" class="text-muted">{{ usuario.name }} {{ usuario.lastName }}</a> </td>
+                      <td> {{ usuario.cedula }}</td>
+                      <!-- <td> {{ usuario.celular }}</td> -->
+                      <td> {{ usuario.email }}</td>
+                      <td> {{ usuario.roleName }}</td>
                       <td>
                         <button class="btn btn-icon button-delete-register" (click)="addEditUser(usuario)">
                             <i anticon="" type="edit" theme="outline" class="f-20"  style="color: white;">

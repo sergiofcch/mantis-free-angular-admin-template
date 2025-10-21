@@ -8,13 +8,11 @@ import { environment } from 'src/environments/environment';
 export class VehiculoService {
 
   constructor(
-    //private http: HttpClient
+    private http: HttpClient
   ) { }
 
-  public listarVehiculos(documento: string) {
-    // Simulación de una llamada a un servicio para obtener los vehículos
-    return null;
-    //return this.http.get<any>(`${environment.apiUrl}/vehiculos/${documento}`);
+  public listarVehiculos(idUsuario: number) {
+    return this.http.get<any>(`${environment.urlApi}/vehicles/user/${idUsuario}`);
   }
 
   public guardarVehiculos(vehiculos: any, documento: string) {

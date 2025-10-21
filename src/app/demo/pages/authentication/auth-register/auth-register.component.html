@@ -6,11 +6,10 @@
         <div class="card-body">
           <!-- Logo -->
           <div class="app-brand justify-content-center">
-            <img src="../../../../../assets/images/logo-dark.svg" alt="" srcset="">
+            <img src="../../../../../assets/images/logo-dark.svg" alt="" srcset="" />
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2 text-titulo-login">La aventura empieza aquí 🚀</h4>
-          <p class="mb-4">¡Haz que la gestión de tus aplicaciones sea fácil y divertida!</p>
+          <h4 class="mb-2 text-titulo-login">Registrate aquí 🚀</h4>
 
           <mat-stepper linear #stepperRegister>
             <mat-step [stepControl]="loginRegisterOne" [editable]="isEditable">
@@ -18,12 +17,28 @@
                 <ng-template matStepLabel>Datos Generales</ng-template>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="nombres">Nombres:</label>
-                  <input type="text" class="form-control" id="nombres" placeholder="Ingresa tus nombres" formControlName="nombres" required matInput/>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombres"
+                    placeholder="Ingresa tus nombres"
+                    formControlName="name"
+                    required
+                    matInput
+                  />
                 </div>
-                
+
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="apellidos">Apellidos:</label>
-                  <input type="text" class="form-control" id="apellidos" placeholder="Ingresa tus apellidos" formControlName="apellidos" required matInput/>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellidos"
+                    placeholder="Ingresa tus apellidos"
+                    formControlName="lastName"
+                    required
+                    matInput
+                  />
                 </div>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="tipo-documento">Tipo de Documento:</label>
@@ -34,26 +49,58 @@
                 </div>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="documento">Documento:</label>
-                  <input type="number" class="form-control" id="documento" placeholder="Ingresa tu documento" formControlName="documento" required/>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="documento"
+                    placeholder="Ingresa tu documento"
+                    formControlName="cedula"
+                    required
+                  />
                 </div>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="celular">Celular:</label>
-                  <input type="number" class="form-control" id="celular" placeholder="Ingresa tu celular" formControlName="celular" required/>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="celular"
+                    placeholder="Ingresa tu celular"
+                    formControlName="celular"
+                    required
+                  />
                 </div>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="correo">Correo:</label>
-                  <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" formControlName="correo" required/>
+                  <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" formControlName="email" required />
                 </div>
                 <div class="mb-3 form-password-toggle col-md-6">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Contraseña</label>
                   </div>
                   <div class="form-group mb-3 input-group input-group-merge">
-                    <input type="password" class="form-control" id="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" formControlName="password" required/>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      aria-describedby="password"
+                      formControlName="password"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <button class="btn btn-primary d-grid w-100 btn-ingresar-login" type="button" mat-button matStepperNext style="width: 170px !important;" (click)="validarCamposPrimer(stepperRegister)" [disabled]="!loginRegisterOne.valid">Siguiente</button>
+                  <button
+                    class="btn btn-primary d-grid w-100 btn-ingresar-login"
+                    type="button"
+                    mat-button
+                    matStepperNext
+                    style="width: 170px !important"
+                    (click)="validarCamposPrimer(stepperRegister)"
+                    [disabled]="!loginRegisterOne.valid"
+                  >
+                    Siguiente
+                  </button>
                 </div>
               </form>
               <!--<form [formGroup]="firstFormGroup">
@@ -72,17 +119,80 @@
                 <ng-template matStepLabel>Vehiculos</ng-template>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="tipo-documento">Tipo de Vehiculo:</label>
-                  <select class="form-select" id="tipo-documento" formControlName="tipoVehiculo">
+                  <select class="form-select" id="tipo-documento" formControlName="type">
                     <option value="MOTO">Moto</option>
                     <option value="CARRO">Carro</option>
                   </select>
                 </div>
                 <div class="form-group mb-3 col-md-6">
                   <label class="form-label" for="placa">Placa:</label>
-                  <input type="text" class="form-control" id="placa" placeholder="Ingresa la placa de tu vehiculo" formControlName="placa"/>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="placa"
+                    placeholder="Ingresa la placa de tu vehiculo"
+                    formControlName="plate"
+                  />
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label" for="marca">Marca:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="marca"
+                    placeholder="Ingresa la marca de tu vehiculo"
+                    formControlName="trademark"
+                  />
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label" for="modelo">Modelo:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="modelo"
+                    placeholder="Ingresa el modelo de tu vehiculo"
+                    formControlName="model"
+                  />
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label" for="soatExpiDate">Fecha Soat - Vence:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="soatExpiDate"
+                    placeholder="Ingresa la fecha de vencimiento del soat de tu vehiculo"
+                    formControlName="soatExpiDate"
+                  />
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label" for="techMechaExpiDate">Fecha Tecnomecanica - Vence:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="techMechaExpiDate"
+                    placeholder="Ingresa la fecha de vencimiento de la tecnomecanica de tu vehiculo"
+                    formControlName="techMechaExpiDate"
+                  />
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label" for="color">Color:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="color"
+                    placeholder="Ingresa el color de tu vehiculo"
+                    formControlName="color"
+                  />
                 </div>
                 <div class="mb-3 col-md-6">
-                  <button class="btn btn-primary d-grid w-100 btn-ingresar-login" type="button" (click)="agregarVehiculo()" style="width: 100px !important;">Agregar</button>
+                  <button
+                    class="btn btn-primary d-grid w-100 btn-ingresar-login"
+                    type="button"
+                    (click)="agregarVehiculo()"
+                    style="width: 100px !important"
+                  >
+                    Agregar
+                  </button>
                 </div>
                 <div class="form-group mb-3 col-md-12">
                   <h5 class="mb-3 text-center">Tus Vehiculos</h5>
@@ -100,14 +210,18 @@
                           @for (vehiculo of vehiculosUser; track vehiculo) {
                             <tr>
                               <td>
-                                <a href="javascript:" class="text-muted">{{ vehiculo.tipoVehiculo }}</a>
+                                <a href="javascript:" class="text-muted">{{ vehiculo.type }}</a>
                               </td>
-                              <td>{{ vehiculo.placa }}</td>
+                              <td>{{ vehiculo.plate }}</td>
+                              <td>{{ vehiculo.trademark }}</td>
+                              <td>{{ vehiculo.model }}</td>
                               <td>
-                                <button class="btn btn-icon button-delete-register"(click)="deleteVehiculo(vehiculo)">
+                                <button class="btn btn-icon button-delete-register" (click)="deleteVehiculo(vehiculo)">
                                   <i anticon="" type="delete" theme="outline" class="f-20">
                                     <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em">
-                                      <path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path>
+                                      <path
+                                        d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                                      ></path>
                                     </svg>
                                   </i>
                                 </button>
@@ -123,22 +237,29 @@
               <form id="formAuthenticationThree" class="mb-3 row" [formGroup]="loginRegisterThree">
                 <div class="mb-3 col-md-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" formControlName="terminos"/>
+                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" formControlName="terminos" />
                     <label class="form-check-label" for="terms-conditions">
                       Acepto la
-                      <a href="javascript:void(0);" class="text-olvido-clave"> política de privacidad y los términos.</a>
+                      <a href="javascript:void(0);" class="text-olvido-clave">política de privacidad y los términos.</a>
                     </label>
                   </div>
                 </div>
                 <div class="mb-3 col-md-12 d-flex justify-content-end">
-                  <button class="btn btn-primary d-grid w-100 btn-ingresar-login" type="button" (click)="register()" style="width: 100px !important;">Registrar</button>
+                  <button
+                    class="btn btn-primary d-grid w-100 btn-ingresar-login"
+                    type="button"
+                    (click)="register()"
+                    style="width: 100px !important"
+                  >
+                    Registrar
+                  </button>
                 </div>
               </form>
             </mat-step>
           </mat-stepper>
 
           <p class="text-center">
-            <span>¿Ya tienes una cuenta? </span>
+            <span>¿Ya tienes una cuenta?</span>
             <a href="/" class="text-olvido-clave">
               <span>Inicia sesión.</span>
             </a>
@@ -148,4 +269,3 @@
     </div>
   </div>
 </div>
-

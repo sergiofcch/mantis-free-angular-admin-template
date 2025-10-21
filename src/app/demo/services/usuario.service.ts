@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +8,11 @@ import { Injectable } from '@angular/core';
 export class UsuarioService {
 
   constructor(
-    // private http: HttpClient
+    private http: HttpClient
   ) { }
 
   public listarUsuarios() {
-    return null;
-    /* return this.http.get(`${this.environment.apiUrl}/usuarios`); */
+    return this.http.get<any[]>(`${environment.urlApi}/users`);
   }
 
   public agregarUsuario(usuario: any) {

@@ -1,6 +1,6 @@
 // angular import
 import { Component, inject, input, output } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 
 // project import
 
@@ -42,7 +42,9 @@ export class NavRightComponent {
   windowWidth: number;
   screenFull: boolean = true;
 
-  constructor() {
+  constructor(
+    private router: Router,
+  ) {
     this.windowWidth = window.innerWidth;
     this.iconService.addIcon(
       ...[
@@ -73,5 +75,10 @@ export class NavRightComponent {
       title: 'Editar Perfil'
     }
   ];
+
+  protected logout(){
+    sessionStorage.removeItem('user');
+    this.router.navigate(['/']);
+  }
 
 }

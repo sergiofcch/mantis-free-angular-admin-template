@@ -47,7 +47,7 @@ const routes: Routes = [
       },
       {
         path: 'admin/reports',
-        loadComponent: () => import('./demo/component/basic-component/typography/typography.component').then((c) => c.TypographyComponent)
+        loadComponent: () => import('./demo/admin-panel/reportes/reportes.component').then((c) => c.ReportesComponent)
       },
     ]
   }
