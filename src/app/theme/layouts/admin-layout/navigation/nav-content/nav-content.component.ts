@@ -68,7 +68,10 @@ export class NavContentComponent implements OnInit {
   // Life cycle events
   ngOnInit() {
     if (this.windowWidth < 1025) {
-      (document.querySelector('.coded-navbar') as HTMLDivElement).classList.add('menupos-static');
+      const navbar = document.querySelector('.coded-navbar') as HTMLDivElement;
+      if (navbar) {
+        navbar.classList.add('menupos-static');
+      }
     }
   }
 
@@ -98,8 +101,11 @@ export class NavContentComponent implements OnInit {
   }
 
   navMob() {
-    if (this.windowWidth < 1025 && document.querySelector('app-navigation.coded-navbar').classList.contains('mob-open')) {
-      this.NavCollapsedMob.emit();
+    if (this.windowWidth < 1025) {
+      const navbar = document.querySelector('app-navigation.coded-navbar');
+      if (navbar && navbar.classList.contains('mob-open')) {
+        this.NavCollapsedMob.emit();
+      }
     }
   }
 }
