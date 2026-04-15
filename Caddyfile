@@ -1,0 +1,11 @@
+:8080 {
+  root * /app/dist
+
+  # Enable template rendering for index.html so we can inject env vars
+  templates
+
+  # SPA routing: serve index.html for any path that doesn't match a file
+  try_files {path} /index.html
+
+  file_server
+}
