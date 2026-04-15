@@ -12,7 +12,7 @@
     <base href="/" />
     <!-- Inject backend URL from Railway environment variable at runtime -->
     <script>
-      window.BACKEND_URL = '{{env "BACKEND_URL"}}' || 'http://localhost:8083';
+      window.BACKEND_URL = '{{BACKEND_URL}}' || 'http://localhost:8083';
     </script>
     <!-- Meta -->
     <meta charset="utf-8" />

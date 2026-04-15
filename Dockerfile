@@ -18,4 +18,10 @@ COPY --from=builder /app/dist /app/dist
 # Copy the Caddyfile
 COPY Caddyfile /etc/caddy/Caddyfile
 
+# Copy and prepare the startup script
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 EXPOSE 8080
+
+CMD ["/start.sh"]
