@@ -1,7 +1,9 @@
 import packageInfo from '../../package.json';
 
 export const environment = {
-  urlApi: 'http://192.168.5.1:8083/api/v1',
+  urlApi: (typeof window !== 'undefined' && (window as any).BACKEND_URL)
+    ? `${(window as any).BACKEND_URL}/api/v1`
+    : 'http://localhost:8083/api/v1',
   appVersion: packageInfo.version,
   production: true
 };
